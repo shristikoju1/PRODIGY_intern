@@ -31,13 +31,19 @@ document.getElementById("lap-btn").addEventListener("click", () => {
 });
 
 function displayTimer() {
-    const currentTime = Date.now();
-    const elapsedTime = currentTime - startTime;
-    
-    hours = Math.floor(elapsedTime / (60 * 60 * 1000));
-    minutes = Math.floor((elapsedTime % (60 * 60 * 1000)) / (60 * 1000));
-    seconds = Math.floor((elapsedTime % (60 * 1000)) / 1000);
-    milliseconds = elapsedTime % 1000;
+    milliseconds += 10;
+    if (milliseconds === 1000) {
+        milliseconds = 0;
+        seconds++;
+        if (seconds === 60) {
+            seconds = 0;
+            minutes++;
+            if (minutes === 60) {
+                minutes = 0;
+                hours++;
+            }
+        }
+    }
 
     updateDisplay();
 }
