@@ -19,6 +19,7 @@ body{
     margin: 5rem 0 0 20rem;
     border-radius: 10px;
     box-shadow: 0 0 20px rgb(66, 67, 35);
+    text-allign: center;
 }
 
 .time{
